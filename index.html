@@ -1992,16 +1992,17 @@ nav.scrolled .logo {
                 gap: 1rem;
             }
         }
-        /* ========================
+
+/* ========================
    MOBILE MENU FIX
    ======================== */
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
 
     .mobile-menu-toggle {
         display: flex !important;
         position: relative;
-        z-index: 1003;
+        z-index: 1004;
     }
 
     .nav-links {
@@ -2011,11 +2012,13 @@ nav.scrolled .logo {
         left: 0 !important;
         width: 100% !important;
         height: 100vh !important;
+
         background: var(--alabaster) !important;
 
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
+        gap: 1.5rem !important;
 
         transform: translateX(100%) !important;
         opacity: 0;
@@ -2031,15 +2034,20 @@ nav.scrolled .logo {
         visibility: visible;
     }
 
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+
     .mobile-menu-toggle.active {
-        z-index: 1004;
+        z-index: 1005;
     }
 
     .hero-content {
         padding-top: 90px;
     }
-    
 }
+        
+        
 /* ========================
    MOBILE DEVICE FONT & LAYOUT FIX
    ======================== */
