@@ -1,1 +1,3481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Sanctuary - Luxury Wellness Retreat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--alabaster);
+    color: var(--slate);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+        :root {
+            --alabaster: #f8f6f1;
+            --sage: #a8b5a0;
+            --sand: #c4a574;
+            --slate: #2c3e3f;
+            --light-sage: #d4dcd2;
+            --dark-sage: #5a7065;
+        }
+
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.8rem; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.4rem; }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+/* ========================
+   NAVIGATION
+   ======================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    z-index: 1000;
+    background: rgba(248, 246, 241, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+nav.scrolled {
+    background: rgba(248, 246, 241, 0.98);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 1rem 3rem;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--slate);
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1002;
+}
+
+nav.scrolled .logo {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--slate);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--sand);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cta-button {
+    padding: 0.75rem 1.8rem;
+    background: var(--sand);
+    color: white !important;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cta-button:hover {
+    background: var(--dark-sage);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(196, 165, 116, 0.3);
+}
+
+/* Mobile Menu Button */
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--slate);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Hamburger → X */
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ========================
+   MOBILE NAVIGATION
+   ======================== */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 1rem 1.5rem;
+    }
+
+    nav.scrolled {
+        padding: 1rem 1.5rem;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+
+        background: var(--alabaster);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 2rem;
+        padding: 5rem 2rem;
+
+        transform: translateX(100%);
+        visibility: hidden;
+        opacity: 0;
+
+        transition:
+            transform 0.35s ease,
+            opacity 0.35s ease,
+            visibility 0.35s ease;
+
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        font-size: 1.35rem;
+    }
+
+    .nav-links .cta-button {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+     .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(44, 62, 63, 0.55) 0%,
+            rgba(44, 62, 63, 0.25) 50%,
+            rgba(44, 62, 63, 0.5) 100%
+        ),
+        url('images/hero.jpg')
+        center/cover no-repeat;
+    z-index: 0;
+    transform: scale(1.02);
+    animation: heroZoom 20s ease-in-out infinite;
+}   
+
+
+
+@keyframes heroZoom {
+    0%, 100% {
+        transform: scale(1.02);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+        @keyframes zoomIn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+.hero-content {
+    text-align: center;
+    color: #ffffff;
+    z-index: 1;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-content h1 {
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.7),
+        0 6px 20px rgba(0, 0, 0, 0.45);
+}
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+.hero-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    background: rgba(44, 62, 63, 0.75);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 2px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.hero-button:first-child {
+    background: var(--slate);
+    color: #ffffff;
+    border-color: var(--slate);
+}
+
+.hero-button:first-child:hover {
+    background: var(--sand);
+    border-color: var(--sand);
+}
+
+.hero-button:last-child {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-button:last-child:hover {
+    background: #ffffff;
+    color: var(--slate);
+}
+
+
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--slate);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--dark-sage);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(212, 220, 210, 0.3) 100%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+.about-image {
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
+}
+        .about-content h3 {
+            margin-bottom: 1.5rem;
+            color: var(--slate);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-points {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .point {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .point-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--slate);
+            font-weight: 600;
+        }
+
+        .point-text h4 {
+            margin-bottom: 0.5rem;
+            color: var(--slate);
+        }
+
+        .point-text p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+        }
+
+        /* Sanctuary Section */
+        .sanctuary {
+            background: var(--alabaster);
+        }
+
+        .sanctuary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .sanctuary-card {
+            position: relative;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .sanctuary-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .sanctuary-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .sanctuary-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .sanctuary-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(44, 62, 63, 0.9) 0%, transparent 100%);
+            padding: 2rem;
+            transition: transform 0.4s ease;
+        }
+
+        .sanctuary-card:hover .sanctuary-overlay {
+            transform: translateY(0);
+        }
+
+        .sanctuary-overlay h3 {
+            color: var(--alabaster);
+            margin-bottom: 0.8rem;
+        }
+
+        .sanctuary-overlay p {
+            color: var(--light-sage);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .learn-more {
+            color: var(--sand);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .learn-more:hover {
+            gap: 1rem;
+        }
+
+        /* Experiences Section */
+        .experiences {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(212, 220, 210, 0.2) 100%);
+        }
+
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border-top: 3px solid transparent;
+        }
+
+        .experience-card:hover {
+            border-top-color: var(--sand);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(196, 165, 116, 0.15);
+        }
+
+        .experience-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card h3 {
+            margin-bottom: 1rem;
+            color: var(--slate);
+        }
+
+        .experience-card p {
+            color: var(--dark-sage);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .duration {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--light-sage);
+            color: var(--slate);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Daily Rhythm Section */
+        .daily-rhythm {
+            background: var(--alabaster);
+        }
+
+        .timeline {
+            position: relative;
+            margin-top: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--sand), transparent);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 50%;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            margin-right: 0;
+            padding-left: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--sand);
+            border: 4px solid var(--alabaster);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-content h4 {
+            color: var(--slate);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--dark-sage);
+            font-size: 0.95rem;
+        }
+
+        .timeline-time {
+            font-size: 0.85rem;
+            color: var(--sand);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 50px;
+                margin-right: 0;
+                padding-left: 2rem;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                left: 15px;
+            }
+        }
+
+        /* Experts Section */
+        .experts {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(212, 220, 210, 0.2) 100%);
+        }
+
+        .experts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .expert-card {
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .expert-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .expert-card:hover .expert-image {
+            transform: scale(1.08);
+        }
+
+        .expert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .expert-card h3 {
+            color: var(--slate);
+            margin-bottom: 0.3rem;
+        }
+
+        .expert-title {
+            color: var(--sand);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .expert-bio {
+            color: var(--dark-sage);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Culinary Section */
+        .culinary {
+            background: var(--alabaster);
+        }
+
+        .culinary-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .culinary-image {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .culinary-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .culinary-text h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .culinary-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .menu-section {
+            margin-top: 3rem;
+        }
+
+        .menu-section h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--slate);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-card h4 {
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-sage);
+        }
+
+        .menu-item {
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .menu-item-name {
+            font-weight: 600;
+            color: var(--slate);
+        }
+
+        .menu-item-desc {
+            font-size: 0.85rem;
+            color: var(--dark-sage);
+            margin-top: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .culinary-intro {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .culinary-image {
+                height: 300px;
+            }
+        }
+
+        /* Virtual Tour Section */
+        .virtual-tour {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(212, 220, 210, 0.2) 100%);
+        }
+
+        .tour-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tour-item {
+            position: relative;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            
+        }
+
+        .tour-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .tour-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .tour-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(44, 62, 63, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .tour-item:hover .tour-overlay {
+            opacity: 1;
+        }
+
+        .tour-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--sand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Audio Section */
+        .audio-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--sand);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            z-index: 900;
+            box-shadow: 0 8px 25px rgba(196, 165, 116, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .audio-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(196, 165, 116, 0.6);
+        }
+
+        .audio-control.off {
+            background: var(--dark-sage);
+        }
+
+        @media (max-width: 768px) {
+            .audio-control {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Concierge Quiz Section */
+        .concierge {
+            background: var(--alabaster);
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .quiz-progress {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 3px;
+            background: var(--light-sage);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-bar.active {
+            background: var(--sand);
+        }
+
+        .quiz-step h3 {
+            margin-bottom: 1.5rem;
+            color: var(--slate);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-option {
+            padding: 1.2rem;
+            border: 2px solid var(--light-sage);
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--sand);
+            background: rgba(196, 165, 116, 0.05);
+        }
+
+        .quiz-option.selected {
+            border-color: var(--sand);
+            background: rgba(196, 165, 116, 0.1);
+        }
+
+        .quiz-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .quiz-button {
+            padding: 0.75rem 1.8rem;
+            background: var(--sand);
+            color: white;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-button:hover:not(:disabled) {
+            background: var(--dark-sage);
+        }
+
+        .quiz-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .quiz-results {
+            display: none;
+            text-align: center;
+        }
+
+        .quiz-results.active {
+            display: block;
+        }
+
+        .results-title {
+            font-size: 1.8rem;
+            color: var(--slate);
+            margin-bottom: 1rem;
+        }
+
+        .recommended-retreat {
+            background: linear-gradient(135deg, rgba(196, 165, 116, 0.1) 0%, rgba(168, 181, 160, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--sand);
+        }
+
+        .recommended-retreat h4 {
+            color: var(--sand);
+            margin-bottom: 1rem;
+        }
+
+        .recommended-retreat p {
+            color: var(--dark-sage);
+            margin-bottom: 1.5rem;
+        }
+
+        .start-over {
+            padding: 0.75rem 2rem;
+            background: var(--slate);
+            color: white;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .start-over:hover {
+            background: var(--sand);
+        }
+        
+       @media (max-width: 768px) {
+    .quiz-container {
+        padding: 2rem 1.5rem;
+        margin: 2rem 1rem;
+    }
+
+    .quiz-step h3 {
+        font-size: 1.2rem;
+    }
+
+    .quiz-option {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .quiz-button {
+        padding: 0.7rem 1.2rem;
+    }
+
+    .results-title {
+        font-size: 1.5rem;
+    }
+
+    .recommended-retreat {
+        padding: 1.5rem;
+    }
+} 
+
+        /* Exclusivity Section */
+        .exclusivity {
+            background: linear-gradient(135deg, var(--sage) 0%, var(--dark-sage) 100%);
+            color: var(--alabaster);
+            text-align: center;
+            padding: 5rem 3rem;
+        }
+
+        .exclusivity h2 {
+            color: var(--alabaster);
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+
+        .exclusivity p {
+            color: var(--alabaster);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--alabaster);
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .testimonial-card.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .testimonial-stars {
+            font-size: 1.2rem;
+            color: var(--sand);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--slate);
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-title {
+            color: var(--sand);
+            font-size: 0.9rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .slider-button {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--sand);
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sand);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .slider-button:hover {
+            background: var(--sand);
+            color: white;
+        }
+      @media (max-width: 768px) {
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .testimonials-container {
+        margin: 2rem auto;
+    }
+}  
+
+        /* Journal Section */
+        .journal {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(212, 220, 210, 0.2) 100%);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .article-card:hover .article-image img {
+            transform: scale(1.08);
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-date {
+            font-size: 0.8rem;
+            color: var(--sand);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .article-card h3 {
+            margin-bottom: 1rem;
+            color: var(--slate);
+        }
+
+        .article-excerpt {
+            color: var(--dark-sage);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .read-article {
+            color: var(--sand);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .read-article:hover {
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .article-image {
+        height: 220px;
+    }
+
+    .article-content {
+        padding: 1.25rem;
+    }
+
+    .article-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .article-excerpt {
+        font-size: 0.9rem;
+    }
+}
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--alabaster);
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--slate);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+
+        .modal-close:hover {
+            background: var(--sand);
+        }
+
+        .modal-article {
+            padding: 3rem;
+        }
+
+        .modal-article h2 {
+            margin-top: 0;
+        }
+
+        .modal-article img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        /* Location Section */
+        .location {
+            background: var(--alabaster);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .location-detail {
+            margin-bottom: 2rem;
+        }
+
+        .location-detail h4 {
+            color: var(--slate);
+            margin-bottom: 0.5rem;
+        }
+
+        .location-detail p {
+            color: var(--dark-sage);
+        }
+
+.location-map {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.location-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.map-overlay {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background: rgba(44, 62, 63, 0.9);
+    color: white;
+    padding: 1rem 1.2rem;
+    border-radius: 6px;
+    max-width: 250px;
+}
+
+.map-overlay span {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.map-overlay strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.map-overlay p {
+    font-size: 0.85rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .location-map {
+        height: 300px;
+    }
+
+    .map-overlay {
+        left: 15px;
+        bottom: 15px;
+        padding: 0.8rem 1rem;
+        max-width: 220px;
+    }
+}
+
+        /* FAQ Section */
+        .faq {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(212, 220, 210, 0.2) 100%);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--slate);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(196, 165, 116, 0.05);
+        }
+
+        .faq-question.active {
+            background: rgba(196, 165, 116, 0.1);
+        }
+
+        .faq-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sand);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 300px;
+            padding: 1.5rem;
+            border-top: 1px solid var(--light-sage);
+            color: var(--dark-sage);
+        }
+        
+        @media (max-width: 768px) {
+    .faq-container {
+        margin: 2rem 1rem;
+    }
+
+    .faq-question {
+        padding: 1.2rem;
+        font-size: 0.95rem;
+        gap: 1rem;
+    }
+
+    .faq-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+
+    .faq-answer.active {
+        padding: 1.2rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+        /* Booking Section */
+        .booking {
+            background: var(--alabaster);
+        }
+
+        .booking-form {
+            max-width: 700px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--slate);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--light-sage);
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: var(--slate);
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--sand);
+            box-shadow: 0 0 0 3px rgba(196, 165, 116, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--sand);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-button:hover {
+            background: var(--dark-sage);
+            transform: translateY(-2px);
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, rgba(168, 181, 160, 0.2) 0%, rgba(196, 165, 116, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid var(--sage);
+        }
+
+        .success-message.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .success-message h3 {
+            color: var(--slate);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--dark-sage);
+        }
+
+     @media (max-width: 768px) {
+    .booking-form {
+        padding: 2rem 1.5rem;
+        margin: 2rem 1rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .submit-button {
+        padding: 0.9rem;
+    }
+}
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, var(--sage) 0%, var(--dark-sage) 100%);
+            color: var(--alabaster);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .newsletter h2 {
+            color: var(--alabaster);
+        }
+
+        .newsletter p {
+            color: var(--alabaster);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: var(--sand);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--alabaster);
+            color: var(--slate);
+        }
+
+        .newsletter-success {
+            display: none;
+            color: var(--alabaster);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+    .newsletter {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .newsletter p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        padding: 0.9rem;
+    }
+}
+        /* Footer */
+        footer {
+            background: var(--slate);
+            color: var(--alabaster);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--alabaster);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: var(--light-sage);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--sand);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(196, 165, 116, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sand);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--sand);
+            color: var(--slate);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(196, 165, 116, 0.2);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: var(--light-sage);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--light-sage);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--sand);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--slate);
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 899;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: var(--sand);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        /* ========================
+   MOBILE MENU FIX
+   ======================== */
+
+@media (max-width: 768px) {
+
+    .mobile-menu-toggle {
+        display: flex !important;
+        position: relative;
+        z-index: 1003;
+    }
+
+    .nav-links {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: var(--alabaster) !important;
+
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        transform: translateX(100%) !important;
+        opacity: 0;
+        visibility: hidden;
+
+        z-index: 1001 !important;
+        transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .nav-links.active {
+        transform: translateX(0) !important;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-toggle.active {
+        z-index: 1004;
+    }
+
+    .hero-content {
+        padding-top: 90px;
+    }
+    
+}
+/* ========================
+   MOBILE DEVICE FONT & LAYOUT FIX
+   ======================== */
+
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+
+    html {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    body {
+        font-size: 1rem;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p,
+    li,
+    a,
+    button,
+    input,
+    textarea,
+    select {
+        font-size: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">SERENITY</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#sanctuary">The Sanctuary</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#culinary">Culinary</a></li>
+            <li><a href="#journal">Journal</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#booking" class="cta-button">Request an Invitation</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Reconnect with your truest self in understated luxury.</h1>
+            <p>A private sanctuary where stillness, nature and exceptional wellness come together.</p>
+            <div class="hero-buttons">
+                <button class="hero-button" onclick="document.getElementById('sanctuary').scrollIntoView({behavior: 'smooth'})">Explore the Journey</button>
+                <button class="hero-button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Request an Invitation</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="12 5 12 19"></polyline>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="section-title">
+            <h2>Our Philosophy</h2>
+            <p>A sanctuary built on the principles of holistic wellness and connection to nature</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="images/philosophy.jpg" alt="Sanctuary Philosophy">
+            </div>
+            <div class="about-content">
+                <h3>The Sanctuary Story</h3>
+                <p>Nestled in serene natural landscapes, Serenity Sanctuary is a haven for those seeking profound transformation through wellness and restoration. Our sanctuary was conceived with a singular purpose: to create a space where the pace of modern life fades away, leaving only stillness, clarity and connection.</p>
+                <p>Founded on principles of sustainability, mindfulness and holistic health, we welcome guests to experience the restorative power of nature combined with expert guidance and exceptional care.</p>
+                
+                <div class="about-points">
+                    <div class="point">
+                        <div class="point-icon">🌿</div>
+                        <div class="point-text">
+                            <h4>Nature Connection</h4>
+                            <p>Every element of our sanctuary is designed to deepen your relationship with the natural world.</p>
+                        </div>
+                    </div>
+                    <div class="point">
+                        <div class="point-icon">✨</div>
+                        <div class="point-text">
+                            <h4>Holistic Wellness</h4>
+                            <p>We address mind, body, and spirit through integrated wellness practices and expert guidance.</p>
+                        </div>
+                    </div>
+                    <div class="point">
+                        <div class="point-icon">🏡</div>
+                        <div class="point-text">
+                            <h4>Luxury Comfort</h4>
+                            <p>Exceptional accommodations and amenities provide the perfect setting for deep rest and renewal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sanctuary Section -->
+    <section class="sanctuary" id="sanctuary">
+        <div class="section-title">
+            <h2>The Sanctuary</h2>
+            <p>Exceptional spaces designed for restoration and renewal</p>
+        </div>
+        <div class="sanctuary-grid">
+            <div class="sanctuary-card">
+                <img src="images/villa.jpg" alt="Luxury Villa">
+                <div class="sanctuary-overlay">
+                    <h3>Luxury Villas</h3>
+                    <p>Private sanctuaries with pristine views and premium amenities including private plunge pools.</p>
+                    <a href="javascript:void(0)" class="learn-more"
+   onclick="openSanctuaryInfo('Luxury Villas', 'Private sanctuaries with pristine views, premium amenities and peaceful spaces designed for complete relaxation.')">
+   Learn More →
+</a>
+                </div>
+            </div>
+            <div class="sanctuary-card">
+                <img src="images/spa.jpg" alt="Wellness Spa">
+                <div class="sanctuary-overlay">
+                    <h3>Spa & Wellness</h3>
+                    <p>World-class treatments featuring organic aromatherapy and rejuvenating spa rituals.</p>
+                    <a href="javascript:void(0)" class="learn-more"
+   onclick="openSanctuaryInfo('Spa & Wellness', 'World-class treatments featuring organic aromatherapy, restorative rituals and personalized wellness experiences.')">
+   Learn More →
+</a>
+                </div>
+            </div>
+            <div class="sanctuary-card">
+                <img src="images/meditation.jpg" alt="Meditation Pavilion">
+                <div class="sanctuary-overlay">
+                    <h3>Meditation Pavilion</h3>
+                    <p>Serene spaces for contemplation, yoga and guided meditation practices.</p>
+                    <a href="javascript:void(0)" class="learn-more"
+   onclick="openSanctuaryInfo('Meditation Pavilion', 'A serene space for contemplation, yoga, breathwork and guided meditation surrounded by nature.')">
+   Learn More →
+</a>
+                    
+                </div>
+            </div>
+            <div class="sanctuary-card">
+                <img src="images/garden.jpg" alt="Gardens">
+                <div class="sanctuary-overlay">
+                    <h3>Botanical Gardens</h3>
+                    <p>Expansive gardens featuring native plants and peaceful nature walks.</p>
+                    <a href="javascript:void(0)" class="learn-more"
+   onclick="openSanctuaryInfo('Botanical Gardens', 'Expansive gardens featuring native plants, peaceful walking paths and beautiful spaces for quiet reflection.')">
+   Learn More →
+</a>
+                </div>
+            </div>
+            <div class="sanctuary-card">
+                <img src="images/suite.jpg" alt="Luxury Suite">
+                <div class="sanctuary-overlay">
+                    <h3>Boutique Suites</h3>
+                    <p>Intimate accommodations with organic linens and thoughtful wellness amenities.</p>
+                    <a href="javascript:void(0)" class="learn-more"
+   onclick="openSanctuaryInfo('Boutique Suites', 'Intimate accommodations featuring organic linens, thoughtful wellness amenities and a peaceful atmosphere.')">
+   Learn More →
+</a>
+                </div>
+            </div>
+            <div class="sanctuary-card">
+                <img src="images/nature.jpg" alt="Nature">
+                <div class="sanctuary-overlay">
+                    <h3>Natural Spaces</h3>
+                    <p>Pristine environments for renewal, reflection and outdoor wellness activities.</p>
+                    <a href="javascript:void(0)" class="learn-more"
+   onclick="openSanctuaryInfo('Natural Spaces', 'Pristine natural environments designed for renewal, reflection, mindful walks and outdoor wellness activities.')">
+   Learn More →
+</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section class="experiences" id="experiences">
+        <div class="section-title">
+            <h2>Curated Retreats</h2>
+            <p>Transformative experiences designed for your wellness journey</p>
+        </div>
+        <div class="experiences-grid">
+            <div class="experience-card">
+                <div class="experience-icon">🧘</div>
+                <h3>Mindfulness Retreat</h3>
+                <p>A transformative 7-day journey exploring meditation, breathwork and conscious living practices to cultivate inner peace and awareness.</p>
+                <span class="duration">7 Days</span>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">🌙</div>
+                <h3>Rest & Renewal</h3>
+                <p>A gentle 4-day escape focused on deep relaxation, restorative yoga, and rejuvenating spa treatments for ultimate restoration.</p>
+                <span class="duration">4 Days</span>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">🏃</div>
+                <h3>Movement & Vitality</h3>
+                <p>A dynamic 5-day program combining yoga, functional movement, and outdoor activities to revitalize body and spirit.</p>
+                <span class="duration">5 Days</span>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">✨</div>
+                <h3>Inner Stillness</h3>
+                <p>An intensive 10-day silent retreat for deep introspection, meditation and connection with your authentic self.</p>
+                <span class="duration">10 Days</span>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">🎯</div>
+                <h3>Bespoke Journey</h3>
+                <p>A personalized wellness program tailored to your unique needs, goals and preferences with expert guidance throughout.</p>
+                <span class="duration">Flexible</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Rhythm Section -->
+    <section class="daily-rhythm">
+        <div class="section-title">
+            <h2>Daily Rhythm</h2>
+            <p>A gentle flow designed to nurture mind, body and spirit</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">6:00 AM</div>
+                    <h4>Sunrise Meditation</h4>
+                    <p>Begin your day with guided meditation as the sun rises over natural landscapes, setting intentions for profound presence.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">7:30 AM</div>
+                    <h4>Botanical Breakfast</h4>
+                    <p>Nourish yourself with organic, nutrient-rich breakfast featuring locally-sourced ingredients prepared with care.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">9:00 AM</div>
+                    <h4>Movement Practice</h4>
+                    <p>Engage in yoga, tai chi or functional movement with expert instructors in serene outdoor or studio settings.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">12:30 PM</div>
+                    <h4>Farm-to-Table Lunch</h4>
+                    <p>Savor mindfully prepared cuisine featuring seasonal ingredients from our organic gardens and sustainable sources.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">2:00 PM</div>
+                    <h4>Spa Ritual</h4>
+                    <p>Experience therapeutic treatments including massage, aromatherapy and holistic healing practices.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">4:00 PM</div>
+                    <h4>Nature Walk</h4>
+                    <p>Explore botanical gardens and natural trails while breathing fresh air and connecting with the environment.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">6:30 PM</div>
+                    <h4>Sunset Dinner</h4>
+                    <p>Dine on chef-prepared wellness cuisine while enjoying views of nature's evening transformation.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">8:00 PM</div>
+                    <h4>Sound Healing</h4>
+                    <p>Experience transformative sound baths and acoustic healing sessions to deepen relaxation and inner peace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experts Section -->
+    <section class="experts">
+        <div class="section-title">
+            <h2>Our Experts</h2>
+            <p>Exceptional practitioners dedicated to your transformation</p>
+        </div>
+        <div class="experts-grid">
+            <div class="expert-card">
+                <div class="expert-image">
+                    <img src="images/experts/sophia.jpg" alt="Yoga Instructor">
+                </div>
+                <h3>Sophia Chen</h3>
+                <div class="expert-title">Yoga & Movement Teacher</div>
+                <p class="expert-bio">With 15+ years of practice, Sophia guides guests through transformative yoga journeys that unite body, breath and awareness.</p>
+            </div>
+            <div class="expert-card">
+                <div class="expert-image">
+<img src="images/experts/marcus.jpg" alt="Meditation Guide">
+                </div>
+                <h3>Marcus Williams</h3>
+                <div class="expert-title">Meditation & Mindfulness Guide</div>
+                <p class="expert-bio">A trained meditation teacher offering profound guidance in mindfulness practices and contemplative traditions.</p>
+            </div>
+            <div class="expert-card">
+                <div class="expert-image">
+<img src="images/experts/elena.jpg" alt="Wellness Practitioner">
+                </div>
+                <h3>Dr. Elena Rodriguez</h3>
+                <div class="expert-title">Holistic Wellness Practitioner</div>
+                <p class="expert-bio">Specializing in integrated wellness approaches that address nutrition, lifestyle and natural healing modalities.</p>
+            </div>
+            <div class="expert-card">
+                <div class="expert-image">
+<img src="images/experts/james.jpg" alt="Therapist">
+                </div>
+                <h3>James Mitchell</h3>
+                <div class="expert-title">Therapeutic & Bodywork Specialist</div>
+                <p class="expert-bio">Expert in massage therapy, energy work and somatic practices for profound physical and emotional release.</p>
+            </div>
+            <div class="expert-card">
+                <div class="expert-image">
+<img src="images/experts/amara.jpg" alt="Chef">
+                </div>
+                <h3>Chef Amara Okonkwo</h3>
+                <div class="expert-title">Executive Wellness Chef</div>
+                <p class="expert-bio">Renowned for creating nourishing, farm-to-table cuisine that delights the palate while supporting wellness goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culinary Section -->
+    <section class="culinary" id="culinary">
+        <div class="section-title">
+            <h2>Culinary Art</h2>
+            <p>Nourishing farm-to-table cuisine for holistic wellness</p>
+        </div>
+        
+        <div class="culinary-intro">
+            <div class="culinary-text">
+                <h3>Our Philosophy</h3>
+                <p>We believe that food is medicine and celebration. Every meal at Serenity Sanctuary is crafted with intention, featuring organic ingredients from our gardens and sustainable sources, prepared to nourish both body and spirit.</p>
+                <p>Our executive chef designs menus around seasonal ingredients, nutritional wellness, and the joy of mindful eating. Each dish is a meditation in flavor and nutrition.</p>
+            </div>
+            <div class="culinary-image">
+                <img src="images/culinary/wellness-food.jpg" alt="Wellness Food">
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h3>Sample Menus</h3>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h4>Botanical Breakfast</h4>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Golden Milk Smoothie Bowl</div>
+                        <div class="menu-item-desc">Turmeric, coconut, fresh berries, granola</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Garden Vegetable Frittata</div>
+                        <div class="menu-item-desc">Organic eggs, seasonal vegetables, herbs</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Pressed Juice</div>
+                        <div class="menu-item-desc">Organic greens, citrus, ginger</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <h4>Farm-to-Table Lunch</h4>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Heirloom Salad</div>
+                        <div class="menu-item-desc">Garden vegetables, edible flowers, light vinaigrette</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Quinoa Buddha Bowl</div>
+                        <div class="menu-item-desc">Organic grains, roasted vegetables, tahini dressing</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Herbal Tea Selection</div>
+                        <div class="menu-item-desc">Fresh herbs from our gardens</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <h4>Wellness Dinner</h4>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Herb-Crusted Fish</div>
+                        <div class="menu-item-desc">Sustainably caught, seasonal vegetables, light oils</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Root Vegetable Medley</div>
+                        <div class="menu-item-desc">Organic roots, aromatic herbs, gentle preparation</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Superfood Dessert</div>
+                        <div class="menu-item-desc">Dates, nuts, dark chocolate, fruits</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour Section -->
+    <section class="virtual-tour">
+        <div class="section-title">
+            <h2>Virtual Tour</h2>
+            <p>Explore our spaces from wherever you are</p>
+        </div>
+        <div class="tour-gallery">
+            <div class="tour-item" onclick="openTourModal('villa')">
+                <img src="images/tour/villa.jpg" alt="Villa Tour">
+                <div class="tour-overlay">
+                    <div class="tour-icon">📸</div>
+                </div>
+            </div>
+            <div class="tour-item" onclick="openTourModal('spa')">
+<img src="images/tour/spa.jpg" alt="Spa Tour">
+                <div class="tour-overlay">
+                    <div class="tour-icon">📸</div>
+                </div>
+            </div>
+            <div class="tour-item" onclick="openTourModal('gardens')">
+<img src="images/tour/gardens.jpg" alt="Gardens Tour">
+                <div class="tour-overlay">
+                    <div class="tour-icon">📸</div>
+                </div>
+            </div>
+            <div class="tour-item" onclick="openTourModal('pavilion')">
+<img src="images/tour/pavilion.jpg" alt="Pavilion Tour">
+                <div class="tour-overlay">
+                    <div class="tour-icon">📸</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exclusivity Section -->
+    <section class="exclusivity">
+        <h2>An Exclusive Experience</h2>
+        <p>Only 12 guests welcomed at a time, ensuring intimate, personalized attention and the serene atmosphere that defines our sanctuary.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>Guest Stories</h2>
+            <p>Transformations and reflections from our community</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-card active">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"My stay at Serenity Sanctuary was truly transformative. In just one week, I rediscovered myself and returned home with profound clarity and peace."</p>
+                <div class="testimonial-author">Alexandra Bennett</div>
+                <div class="testimonial-title">Executive, New York</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"The combination of expert guidance, luxurious accommodations and natural beauty created the perfect environment for deep healing and renewal."</p>
+                <div class="testimonial-author">James Chen</div>
+                <div class="testimonial-title">Entrepreneur, San Francisco</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Every detail was thoughtfully designed. From the food to the spa treatments to the meditation sessions, everything aligned with my wellness journey."</p>
+                <div class="testimonial-author">Maria Santos</div>
+                <div class="testimonial-title">Creative Director, London</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"I felt completely held and supported. The stillness of the sanctuary allowed me to release what no longer served me and embrace new possibilities."</p>
+                <div class="testimonial-author">David Okonkwo</div>
+                <div class="testimonial-title">Consultant, Lagos</div>
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-button" onclick="previousTestimonial()">←</button>
+                <button class="slider-button" onclick="nextTestimonial()">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concierge Quiz Section -->
+    <section class="concierge">
+        <div class="section-title">
+            <h2>Wellness Concierge Quiz</h2>
+            <p>Discover your ideal retreat based on your wellness goals</p>
+        </div>
+        <div class="quiz-container">
+            <div class="quiz-progress" id="quizProgress"></div>
+            
+            <!-- Step 1 -->
+            <div class="quiz-step active" id="step1">
+                <h3>What is your primary wellness goal?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="selectAnswer(event, 1, 'goal', 'peace')">Find inner peace and clarity</button>
+                    <button class="quiz-option" onclick="selectAnswer(event , 1, 'goal', 'energy')">Boost energy and vitality</button>
+                    <button class="quiz-option" onclick="selectAnswer(event , 1, 'goal', 'rest')">Deep relaxation and rest</button>
+                    <button class="quiz-option" onclick="selectAnswer( event, 1, 'goal', 'transform')">Transform your life</button>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="quiz-step" id="step2">
+                <h3>What activities appeal to you most?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="selectAnswer(event,  2, 'activity', 'yoga')">Yoga & Stretching</button>
+                    <button class="quiz-option" onclick="selectAnswer(event, 2, 'activity', 'meditation')">Meditation & Mindfulness</button>
+                    <button class="quiz-option" onclick="selectAnswer(event, 2, 'activity', 'movement')">Dynamic Movement</button>
+                    <button class="quiz-option" onclick="selectAnswer(event, 2, 'activity', 'spa')">Spa & Treatments</button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="quiz-step" id="step3">
+                <h3>How long are you planning to stay?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="selectAnswer(event, 3, 'duration', 'weekend')">Weekend (2-3 days)</button>
+                    <button class="quiz-option" onclick="selectAnswer(event, 3, 'duration', 'week')">One Week</button>
+                    <button class="quiz-option" onclick="selectAnswer(event, 3, 'duration', 'extended')">Extended (10+ days)</button>
+                    <button class="quiz-option" onclick="selectAnswer(event, 3, 'duration', 'flexible')">Flexible</button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="quiz-results" id="quizResults">
+                <h2 class="results-title">Your Recommended Retreat</h2>
+                <div class="recommended-retreat" id="recommendedRetreat"></div>
+                <button class="start-over" onclick="resetQuiz()">Start Over</button>
+            </div>
+
+            <div class="quiz-buttons" id="quizButtons">
+                <button class="quiz-button" id="prevBtn" onclick="previousStep()" disabled>← Back</button>
+                <button class="quiz-button" id="nextBtn" onclick="nextStep()" disabled>Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Section -->
+    <section class="journal" id="journal">
+        <div class="section-title">
+            <h2>Wellness Journal</h2>
+            <p>Insights, practices and wisdom for your wellness journey</p>
+        </div>
+        <div class="articles-grid">
+            <div class="article-card" onclick="openArticle('meditation')">
+                <div class="article-image">
+                    <img src="images/journal/meditation.jpg" alt="Article">
+                </div>
+                <div class="article-content">
+                    <div class="article-date">August 15, 2024</div>
+                    <h3>The Art of Meditation</h3>
+                    <p class="article-excerpt">Discover how meditation can transform your relationship with yourself and the world, cultivating inner peace through simple, profound practices.</p>
+                  <a href="javascript:void(0)" class="read-article">Read Article →</a>
+                </div>
+            </div>
+            <div class="article-card" onclick="openArticle('nutrition')">
+                <div class="article-image">
+                    <img src="images/journal/nutrition.jpg" alt="Article">
+                </div>
+                <div class="article-content">
+                    <div class="article-date">August 10, 2024</div>
+                    <h3>Nourishing Your Body</h3>
+                    <p class="article-excerpt">Explore the power of whole foods and mindful eating. Learn how nutrition becomes a gateway to wellness and self-care.</p>
+                    <a href="javascript:void(0)" class="read-article">Read Article →</a>
+                </div>
+            </div>
+            <div class="article-card" onclick="openArticle('nature')">
+                <div class="article-image">
+                    <img src="images/journal/nature.jpg" alt="Article">
+                </div>
+                <div class="article-content">
+                    <div class="article-date">August 5, 2024</div>
+                    <h3>Reconnecting with Nature</h3>
+                    <p class="article-excerpt">Nature is our greatest healer. Discover how spending time in natural spaces transforms stress into serenity and disconnection into belonging.</p>
+                    <a href="javascript:void(0)" class="read-article">Read Article →</a>
+                </div>
+            </div>
+            <div class="article-card" onclick="openArticle('sleep')">
+                <div class="article-image">
+                   <img src="images/journal/sleep.jpg" alt="Article"> 
+                </div>
+                <div class="article-content">
+                    <div class="article-date">July 28, 2024</div>
+                    <h3>Rituals of Rest</h3>
+                    <p class="article-excerpt">Quality sleep is foundational to wellness. Learn the practices that help you sleep deeper and wake more refreshed than ever before.</p>
+                    <a href="javascript:void(0)" class="read-article">Read Article →</a>
+                </div>
+            </div>
+            <div class="article-card" onclick="openArticle('movement')">
+                <div class="article-image">
+                   <img src="images/journal/movement.jpg" alt="Article"> 
+                </div>
+                <div class="article-content">
+                    <div class="article-date">July 20, 2024</div>
+                    <h3>Movement as Medicine</h3>
+                    <p class="article-excerpt">Mindful movement practices strengthen both body and mind. Explore how yoga and tai chi become pathways to vitality and peace.</p>
+                    <a href="javascript:void(0)" class="read-article">Read Article →</a>
+                </div>
+            </div>
+            <div class="article-card" onclick="openArticle('clarity')">
+                <div class="article-image">
+                   <img src="images/journal/clarity.jpg" alt="Article"> 
+                </div>
+                <div class="article-content">
+                    <div class="article-date">July 12, 2024</div>
+                    <h3>Finding Clarity</h3>
+                    <p class="article-excerpt">In stillness, clarity emerges. Explore contemplative practices that help you connect with your deepest wisdom and authentic purpose.</p>
+                    <a href="javascript:void(0)" class="read-article">Read Article →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="section-title">
+            <h2>Our Location</h2>
+            <p>Find us in a serene natural setting designed for wellness</p>
+        </div>
+        <div class="location-content">
+            <div class="location-info">
+                <h3>Destination Details</h3>
+                <div class="location-detail">
+                    <h4>📍 Location</h4>
+                    <p>Nestled in the rolling hills of our sanctuary region, surrounded by pristine nature and protected landscapes.</p>
+                </div>
+                <div class="location-detail">
+                    <h4>✈️ Getting Here</h4>
+                    <p>Conveniently accessible via major airports with private transfer service. We handle all logistics so you can relax.</p>
+                </div>
+                <div class="location-detail">
+                    <h4>🌍 Climate</h4>
+                    <p>Blessed with year-round mild climate perfect for outdoor wellness activities and garden cultivation.</p>
+                </div>
+                <div class="location-detail">
+                    <h4>🚗 Directions</h4>
+                    <p>Detailed directions and transportation options provided upon booking. We offer seamless arrival experiences.</p>
+                </div>
+            </div>
+            <div class="location-map">
+    <img src="images/location/sanctuary-map.jpg" alt="Serenity Sanctuary location">
+    <div class="map-overlay">
+        <span>📍</span>
+        <strong>Serenity Sanctuary</strong>
+        <p>Surrounded by pristine nature</p>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about your wellness journey</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What is included in a retreat?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Our retreats include accommodation, all meals, daily classes and sessions, access to spa facilities, nature walks, expert guidance and support. Everything is designed for your complete wellness experience.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What is the best time to visit?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Our sanctuary welcomes guests year-round. Each season offers unique benefits and beauty. We recommend booking 2-3 months in advance to secure your preferred dates, though we accommodate last-minute requests when possible.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do I need experience with wellness practices?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>No experience necessary! Our experts work with all levels, from complete beginners to advanced practitioners. Sessions are tailored to meet you where you are in your wellness journey.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What accommodations do we offer?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer luxury villas with private plunge pools, boutique suites with organic linens, and accommodations designed for maximum comfort and wellness. Each space features modern amenities within a peaceful, natural setting.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I arrive with a guest?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We welcome single guests and small groups. Our intimacy policy ensures no more than 12 guests at a time, allowing for personalized attention and serene community dynamics.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Are dietary restrictions accommodated?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. Our chef specializes in creating delicious, nourishing meals for all dietary needs—vegan, vegetarian, gluten-free, allergies and specific wellness protocols. Please share your preferences during booking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="section-title">
+            <h2>Begin Your Journey</h2>
+            <p>Request an invitation to experience Serenity Sanctuary</p>
+        </div>
+        <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="success-message" id="successMessage">
+                <h3>Thank you for your inquiry!</h3>
+                <p>We've received your request and will be in touch within 24 hours to discuss your wellness journey.</p>
+            </div>
+
+            <div id="formContent">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="arrival">Arrival Date *</label>
+                        <input type="date" id="arrival" name="arrival" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="departure">Departure Date *</label>
+                        <input type="date" id="departure" name="departure" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Number of Guests *</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="accommodation">Accommodation Preference *</label>
+                        <select id="accommodation" name="accommodation" required>
+                            <option value="">Select</option>
+                            <option value="villa">Luxury Villa</option>
+                            <option value="suite">Boutique Suite</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="retreat">Preferred Retreat *</label>
+                    <select id="retreat" name="retreat" required>
+                        <option value="">Select</option>
+                        <option value="mindfulness">Mindfulness Retreat</option>
+                        <option value="rest">Rest & Renewal</option>
+                        <option value="movement">Movement & Vitality</option>
+                        <option value="stillness">Inner Stillness</option>
+                        <option value="bespoke">Bespoke Journey</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiences">Wellness Experiences of Interest</label>
+                    <textarea id="experiences" name="experiences" placeholder="E.g., Yoga, Meditation, Spa Treatments, Nature Walks..." rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="requests">Special Requests or Wellness Goals</label>
+                    <textarea id="requests" name="requests" placeholder="Tell us about your wellness goals and any special needs..." rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Send Inquiry</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <h2>Stay Connected</h2>
+        <p>Receive our complimentary guide to creating rituals of rest and wellness wisdom straight to your inbox.</p>
+        <form class="newsletter-form" onsubmit="submitNewsletter(event)">
+            <input type="email" placeholder="Your email address" required id="newsletterEmail">
+            <button type="submit">Subscribe</button>
+        </form>
+        <div class="newsletter-success" id="newsletterSuccess">Thank you for subscribing! Check your email for the guide.</div>
+    </section>
+    <!-- Location Section with ID for anchor -->
+    <section id="contact"></section>
+    
+<!-- Footer -->
+<footer id="contact">
+    <div class="footer-content">
+                <h4>Serenity Sanctuary</h4>
+                <p>A luxury wellness retreat dedicated to transformation, restoration and the discovery of your truest self.</p>
+                <div class="social-links">
+<div class="social-links">
+    <a href="#" class="social-link" title="Instagram">IG</a>
+    <a href="#" class="social-link" title="Facebook">f</a>
+    <a href="#" class="social-link" title="LinkedIn">in</a>
+</div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#sanctuary">The Sanctuary</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#culinary">Culinary</a></li>
+                    <li><a href="#journal">Journal</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:hello@serenitysanctuary.com">hello@serenitysanctuary.com</a>
+                    <li><a href="tel:+14165550147">+1 (416) 555-0147</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Serenity Sanctuary. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Audio Control -->
+    <button class="audio-control" id="audioControl" onclick="toggleAudio()">🔊</button>
+<!-- Modals -->
+
+<!-- Article Modal -->
+<div class="modal" id="articleModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeArticle()">×</button>
+        <div class="modal-article" id="articleContent"></div>
+    </div>
+</div>
+
+<!-- Virtual Tour Modal -->
+<div class="modal" id="tourModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeTourModal()">×</button>
+
+        <div style="padding: 3rem;">
+            <h2 id="tourTitle"></h2>
+
+            <img id="tourImage" src="" alt="Virtual Tour">
+
+            <p id="tourDescription"></p>
+        </div>
+    </div>
+</div>
+
+    <!-- Audio element (hidden) -->
+    <audio id="ambientAudio" loop volume="0.3">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2868/2868-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+// ========== Navigation & Scroll Effects ==========
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.getElementById('navLinks');
+    const menuToggle = document.getElementById('menuToggle');
+    const backToTop = document.getElementById('backToTop');
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+
+            if (backToTop) {
+                backToTop.classList.add('show');
+            }
+        } else {
+            navbar.classList.remove('scrolled');
+
+            if (backToTop) {
+                backToTop.classList.remove('show');
+            }
+        }
+    });
+    // Mobile menu toggle
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+
+});
+        // ========== Back to Top ==========
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ========== Testimonials Slider ==========
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+
+        function showTestimonial(n) {
+            testimonials.forEach(card => card.classList.remove('active'));
+            testimonials[n].classList.add('active');
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+
+        function previousTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+
+        // ========== Concierge Quiz ==========
+        let quizAnswers = { goal: '', activity: '', duration: '' };
+        let currentStep = 1;
+
+        function updateProgress() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach((bar, index) => {
+                bar.classList.toggle('active', index < currentStep);
+            });
+        }
+
+        function initializeQuiz() {
+            const quizProgress = document.getElementById('quizProgress');
+            for (let i = 0; i < 3; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'progress-bar';
+                quizProgress.appendChild(bar);
+            }
+            updateProgress();
+        }
+
+        function selectAnswer(event, step, key, value) {
+  quizAnswers[key] = value;
+
+  const options = document.querySelectorAll(`#step${step} .quiz-option`);
+  options.forEach(opt => opt.classList.remove('selected'));
+
+  event.currentTarget.classList.add('selected');
+
+  updateButtons();
+}
+
+        function updateButtons() {
+  const keyByStep = {
+    1: 'goal',
+    2: 'activity',
+    3: 'duration'
+  };
+
+  const currentKey = keyByStep[currentStep];
+
+  document.getElementById('nextBtn').disabled = !quizAnswers[currentKey];
+}
+
+     function nextStep() {
+    if (currentStep < 3) {
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+
+        currentStep++;
+
+        document.getElementById(`step${currentStep}`).classList.add('active');
+
+        updateProgress();
+
+        document.getElementById('prevBtn').disabled = false;
+
+        if (currentStep === 3) {
+            document.getElementById('nextBtn').textContent = 'Get Recommendation';
+            document.getElementById('nextBtn').onclick = () => showResults();
+        }
+
+        updateButtons();
+    }
+}   
+
+        function previousStep() {
+            if (currentStep > 1) {
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                currentStep--;
+                document.getElementById(`step${currentStep}`).classList.add('active');
+                updateProgress();
+                if (currentStep === 1) {
+                    document.getElementById('prevBtn').disabled = true;
+                }
+                document.getElementById('nextBtn').textContent = 'Next →';
+                document.getElementById('nextBtn').onclick = () => nextStep();
+                updateButtons();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizButtons').style.display = 'none';
+            
+            const recommendations = {
+                'peace-meditation-week': 'Mindfulness Retreat',
+                'peace-meditation-extended': 'Inner Stillness',
+                'rest-spa-weekend': 'Rest & Renewal',
+                'energy-movement-week': 'Movement & Vitality',
+            };
+
+            const key = `${quizAnswers.goal}-${quizAnswers.activity}-${quizAnswers.duration}`;
+            let recommendation = 'Bespoke Wellness Journey';
+
+            if (recommendations[key]) {
+                recommendation = recommendations[key];
+            } else if (quizAnswers.goal === 'peace') {
+                recommendation = 'Mindfulness Retreat';
+            } else if (quizAnswers.goal === 'energy') {
+                recommendation = 'Movement & Vitality';
+            } else if (quizAnswers.goal === 'rest') {
+                recommendation = 'Rest & Renewal';
+            }
+
+            const retreatDescriptions = {
+                'Mindfulness Retreat': 'A 7-day transformative journey with meditation, breathwork and conscious living to cultivate inner peace.',
+                'Rest & Renewal': 'A 4-day escape focused on deep relaxation and restorative practices for ultimate restoration.',
+                'Movement & Vitality': 'A 5-day program combining yoga, movement and outdoor activities to revitalize your spirit.',
+                'Inner Stillness': 'An intensive 10-day silent retreat for deep introspection and authentic connection.',
+                'Bespoke Wellness Journey': 'A personalized program tailored to your unique goals and preferences with expert guidance.'
+            };
+
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'none';
+            document.getElementById('step3').style.display = 'none';
+            
+            const resultsDiv = document.getElementById('quizResults');
+            resultsDiv.classList.add('active');
+            
+            document.getElementById('recommendedRetreat').innerHTML = `
+                <h4>${recommendation}</h4>
+                <p>${retreatDescriptions[recommendation] || 'Discover the perfect wellness experience tailored to you.'}</p>
+                <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Book This Retreat</button>
+            `;
+        }
+
+       function resetQuiz() {
+    quizAnswers = { goal: '', activity: '', duration: '' };
+    currentStep = 1;
+
+    document.querySelectorAll('.quiz-step').forEach(step => {
+        step.classList.remove('active');
+        step.style.display = '';
+    });
+
+    document.querySelectorAll('.quiz-option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+
+    document.getElementById('step1').classList.add('active');
+
+    document.getElementById('quizResults').classList.remove('active');
+
+    document.getElementById('quizButtons').style.display = 'flex';
+
+    document.getElementById('prevBtn').disabled = true;
+
+    document.getElementById('nextBtn').textContent = 'Next →';
+
+    document.getElementById('nextBtn').onclick = () => nextStep();
+
+    updateProgress();
+    updateButtons();
+} 
+
+        // Initialize quiz
+        initializeQuiz();
+        updateButtons();
+
+        // ========== FAQ Accordion ==========
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const item = button.parentElement;
+            
+            document.querySelectorAll('.faq-answer.active').forEach(a => {
+                if (a !== answer) {
+                    a.classList.remove('active');
+                    a.previousElementSibling.classList.remove('active');
+                }
+            });
+
+            answer.classList.toggle('active');
+            button.classList.toggle('active');
+        }
+
+// ========== Article Modal ==========
+
+function openArticle(articleId) {
+
+    const articles = {
+
+        meditation: {
+            content: `
+                <h2>The Art of Meditation</h2>
+                <img src="images/journal/meditation.jpg" alt="Meditation practice">
+                <p>Meditation is one of the most profound practices available to us. In a world of constant stimulation and noise, meditation offers us a gateway to inner silence, clarity and peace.</p>
+                <p>Rather than trying to remove all thoughts, meditation teaches us to observe them without judgment and gently return our attention to the present moment.</p>
+                <h3>Getting Started</h3>
+                <p>Begin with just 5–10 minutes daily. Find a comfortable seated position, close your eyes gently, and focus on your natural breath. When your mind wanders, simply notice it and return to your breath.</p>
+                <h3>Benefits You'll Experience</h3>
+                <p>Regular meditation can support relaxation, focus, emotional resilience and a greater sense of inner calm.</p>
+            `
+        },
+
+        nutrition: {
+            content: `
+                <h2>Nourishing Your Body</h2>
+                <img src="images/journal/nutrition.jpg" alt="Healthy nutritious food">
+                <p>Food is an important part of your wellness journey. Every meal is an opportunity to nourish your body and support your overall wellbeing.</p>
+                <p>At Serenity Sanctuary, we celebrate fresh, wholesome ingredients and mindful preparation.</p>
+                <h3>Mindful Eating Practices</h3>
+                <p>Slow down and taste your food fully. Notice the colors, aromas and flavors. Give yourself time to enjoy each meal without distraction.</p>
+                <h3>Seasonal Eating</h3>
+                <p>Choosing fresh seasonal foods can make meals more enjoyable while helping you connect with nature's changing rhythms.</p>
+            `
+        },
+
+        nature: {
+            content: `
+                <h2>Reconnecting with Nature</h2>
+                <img src="images/journal/nature.jpg" alt="Peaceful nature">
+                <p>Nature can provide a powerful space for rest, reflection and renewal. Stepping away from everyday distractions allows us to reconnect with the world around us.</p>
+                <p>At Serenity Sanctuary, guests can enjoy mindful walks, forest bathing, meditation and quiet reflection in natural surroundings.</p>
+                <h3>The Healing Power of Nature</h3>
+                <p>Time outdoors can help calm the mind, reduce everyday stress and create a deeper sense of connection.</p>
+                <h3>Creating Your Connection</h3>
+                <p>Take a slow walk without your phone. Notice the sounds around you, feel the ground beneath your feet and allow yourself to be fully present.</p>
+            `
+        },
+
+        sleep: {
+            content: `
+                <h2>Rituals of Rest</h2>
+                <img src="images/journal/sleep.jpg" alt="Peaceful bedroom for restful sleep">
+                <p>Rest is an essential part of a balanced wellness journey. Creating peaceful evening habits can help prepare your body and mind for quality sleep.</p>
+                <h3>Create a Calming Evening</h3>
+                <p>Reduce distractions before bed, dim bright lights and create a quiet environment that signals to your body that it is time to slow down.</p>
+                <h3>Make Rest a Priority</h3>
+                <p>Give yourself enough time to relax before sleeping. A consistent bedtime routine can make your evenings more peaceful and restorative.</p>
+            `
+        },
+
+        movement: {
+            content: `
+                <h2>Movement as Medicine</h2>
+                <img src="images/journal/movement.jpg" alt="Mindful movement and yoga">
+                <p>Movement can be a beautiful way to reconnect with your body, build strength and create a greater sense of vitality.</p>
+                <p>At Serenity Sanctuary, mindful movement includes practices such as yoga, stretching and gentle outdoor activities.</p>
+                <h3>Move With Awareness</h3>
+                <p>Instead of focusing only on performance, pay attention to your breathing, posture and how your body feels throughout each movement.</p>
+                <h3>Find What Feels Right</h3>
+                <p>Choose movement that supports your energy and wellbeing. Even a gentle daily walk can become an opportunity for mindfulness and connection.</p>
+            `
+        },
+
+        clarity: {
+            content: `
+                <h2>Finding Clarity</h2>
+                <img src="images/journal/clarity.jpg" alt="Peaceful setting for reflection">
+                <p>In stillness, clarity can emerge. Creating moments of quiet gives you space to reflect on what matters most.</p>
+                <h3>Make Space for Stillness</h3>
+                <p>Set aside a few quiet minutes each day without your phone or other distractions. Simply breathe, observe and allow your thoughts to settle.</p>
+                <h3>Reconnect With Your Purpose</h3>
+                <p>Use moments of reflection to consider your values, goals and the experiences that bring meaning to your life.</p>
+            `
+        }
+
+    };
+
+    const modal = document.getElementById('articleModal');
+    const articleContent = document.getElementById('articleContent');
+
+    if (modal && articleContent && articles[articleId]) {
+
+        articleContent.innerHTML = articles[articleId].content;
+
+        modal.classList.add('active');
+
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeArticle() {
+
+    const modal = document.getElementById('articleModal');
+
+    if (modal) {
+
+        modal.classList.remove('active');
+
+        document.body.style.overflow = '';
+    }
+}
+
+
+// Close article modal when clicking outside the content
+
+document.addEventListener('click', (event) => {
+
+    const modal = document.getElementById('articleModal');
+
+    if (modal && event.target === modal) {
+        closeArticle();
+    }
+
+});
+
+
+// Close article modal with Escape key
+
+document.addEventListener('keydown', (event) => {
+
+    if (event.key === 'Escape') {
+        closeArticle();
+    }
+
+});
+
+    // ========== Sanctuary Learn More ==========
+    function openSanctuaryInfo(title, description) {
+        const modal = document.getElementById('articleModal');
+        const articleContent = document.getElementById('articleContent');
+
+        if (modal && articleContent) {
+            articleContent.innerHTML = `
+                <h2>${title}</h2>
+                <p>${description}</p>
+                <p>Discover a peaceful environment designed to support rest, renewal and your personal wellness journey at Serenity Sanctuary.</p>
+                <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'}); closeArticle();">
+                    Request an Invitation
+                </button>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+// ========== Virtual Tour Modal ==========
+
+function openTourModal(tourId) {
+    const tourModal = document.getElementById('tourModal');
+    const tourTitle = document.getElementById('tourTitle');
+    const tourImage = document.getElementById('tourImage');
+    const tourDescription = document.getElementById('tourDescription');
+
+    const tours = {
+        villa: {
+            title: 'Serenity Villa',
+            image: 'images/tour/villa.jpg',
+            description: 'Explore our peaceful private villas, designed with natural materials, elegant interiors and beautiful surroundings for complete relaxation.'
+        },
+
+        spa: {
+            title: 'Wellness Spa',
+            image: 'images/tour/spa.jpg',
+            description: 'Step into our tranquil spa sanctuary and experience restorative treatments, therapeutic massage and holistic wellness rituals.'
+        },
+
+        gardens: {
+            title: 'Botanical Gardens',
+            image: 'images/tour/gardens.jpg',
+            description: 'Wander through our beautiful botanical gardens, surrounded by peaceful pathways, plants and natural landscapes.'
+        },
+
+        pavilion: {
+            title: 'Meditation Pavilion',
+            image: 'images/tour/pavilion.jpg',
+            description: 'Discover our serene meditation pavilion, created for yoga, meditation, sound healing and quiet moments of reflection.'
+        }
+    };
+
+    const tour = tours[tourId];
+
+    if (!tour || !tourModal) {
+        return;
+    }
+
+    tourTitle.textContent = tour.title;
+    tourImage.src = tour.image;
+    tourImage.alt = tour.title;
+    tourDescription.textContent = tour.description;
+
+    tourModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeTourModal() {
+    const tourModal = document.getElementById('tourModal');
+
+    if (tourModal) {
+        tourModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close Virtual Tour modal when clicking outside the content
+document.addEventListener('click', (event) => {
+    const tourModal = document.getElementById('tourModal');
+
+    if (tourModal && event.target === tourModal) {
+        closeTourModal();
+    }
+});
+
+// Close Virtual Tour modal with Escape key
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeTourModal();
+    }
+});
+// ========== Newsletter Subscription ==========
+
+function submitNewsletter(event) {
+    event.preventDefault();
+
+    const emailInput = document.getElementById('newsletterEmail');
+    const successMessage = document.getElementById('newsletterSuccess');
+
+    if (!emailInput || !successMessage) {
+        return;
+    }
+
+    successMessage.style.display = 'block';
+    emailInput.value = '';
+
+    setTimeout(() => {
+        successMessage.style.display = 'none';
+    }, 5000);
+}
+
+// ========== Booking Form ==========
+
+function submitBooking(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('bookingForm');
+    const formContent = document.getElementById('formContent');
+    const successMessage = document.getElementById('successMessage');
+
+    if (!form || !formContent || !successMessage) {
+        return;
+    }
+
+    const arrival = document.getElementById('arrival').value;
+    const departure = document.getElementById('departure').value;
+
+    if (departure < arrival) {
+        alert('Departure date must be after the arrival date.');
+        return;
+    }
+
+    formContent.style.display = 'none';
+    successMessage.classList.add('active');
+
+    form.reset();
+}
+
+  
+</script>
+</body>
+</html>
